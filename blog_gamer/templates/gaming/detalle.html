@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} NOTICIAS {% endblock titulo %}
+
+{% block contenido %}
+
+<h1 class="title">noticias</h1>
+
+<section class="detalle-noticia">
+
+  	<h2 class="integrante">{{noticia.titulo}}</h2>
+  
+  	<img src="{{noticia.imagen.url}}" width="600px" height="auto" class="img-detalle">
+  	<div class="hora-categ">
+
+		  <h6>{{noticia.fecha}}</h6>
+		  <h6>CATEGORIA: {{noticia.categoria_noticia}}</h6>
+	</div>
+  <p>{{noticia.cuerpo}}</p>
+</section>
+
+	<a href="{% url 'noticias:listar' %}" class="boton-volver">VOLVER A NOTICIAS</a>
+	
+	<section class="comentar">
+		
+		<form method="POST" action="{% url 'noticias:comentar' %}" class="comentarios">{% csrf_token %}
+			<textarea  name="comentario" maxlength="1500" placeholder="Deje su comentario aquí"></textarea>
+			<input type="text" name="id_noticia" value="{{noticia.pk}}" hidden="">
+			<input type="submit" value="ENVIAR" class="guardar">
+		</form>
+	</section>
+	<br>
+	<br>
+	<section class="respuestas">
+		
+		<h3 class="integrante">COMENTARIOS</h3>	
+		
+		{% for com in comentarios %}
+		<p>{{com.texto}}</p>
+		{% if user == com.usuario %}
+		<!--  <a href="" class="borrar">borrar</a>  -->
+		{% endif %}
+		<strong class="fecha-comentario">{{com.fecha}}</strong><br>
+		<strong class="usuario-comentario">{{com.usuario}}</strong><br>		
+		
+		{% endfor %}
+	</section>
+	
+{% endblock contenido %}
+	

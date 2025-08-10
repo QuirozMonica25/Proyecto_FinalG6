@@ -1,193 +1,160 @@
-
-:root{
-    --bg-color:#1b2021;
-    --bg-secondary-color:#308c7d;
-    --primary-color:#1b2021;
-    --secondary-color:#514e80;
-    --third-color:#8d99ae;
-    --letter-color:color: rgb(255, 190, 255);
-    --body-color:#0a1641;
-    --header-bg:#15003d;
-    --header-letter:rgb(255, 190, 255);
-    --form-bg:#2c1a80;
-    --letter-hover:#60fdbc;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 3vw;
 }
 
-
-
-*{
-    padding: 0px;
-    margin: 0px;
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("videojuegos neon4.png");
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-body{
-    font-family: 'Lucida Sans Unicode';
-    background-color:var(--body-color);
-}
-
-
-
-/*principal*/
-.main {grid-area: mein;}
-.footer {grid-area: footer;}
-/* 
-.espaciador{grid-area: espaciador;}
-.posicionador{grid-area: reel;}
-.contenido{grid-area: contenido;} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-.image-container {
-  width: 500px;      /* ancho deseado */
-  height: 300px;     /* altura deseada */
+.topnav {
   position: relative;
   overflow: hidden;
+  background-color: #0e0e1d;
 }
 
-.image-container img {
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: #ab0d9d;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4ace55;
+  color: black;
+}
+
+.topnav-centered a {
+  float: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-        /*6 columnas y 3 filas*/
-        'main main main main main buscador'
-        'info info info info info buscador'
-        'footer footer footer footer footer footer';
-    background-image: url(../img/fondo1.webp)
+.topnav-right {
+  float: right;
 }
 
-.grid-container .main{
-    margin-left: 5vw;
-    padding: 20px;
-    background-color: rgb(13, 6, 44);
-    /* background-color: var(--primary-color); */
-}
-
-.contenedor{
-    margin-bottom: 20px;
-}
-.grid-container #reel{
-    text-align: center;
-    border-radius: 20px;
-    overflow: hidden;
-    border: groove 6px rgb(158, 76, 158);
-
-    background-image: url(../img/reel4.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;
-    height: 65vh;
-    border-radius: 10px;
-    
-    animation-name: cambiar;
-    animation-duration: 25s;
-    animation-delay: 3s;
-    animation-iteration-count: infinite;
-}
-#titulo1{
-    padding-bottom: 3px;
-    text-align: center;
-    color: rgb(255, 190, 255);
-}
-#subtitulo{
-    padding-bottom: 3px;
-    text-align: center;
-    color: rgb(255, 190, 255);
-}
-#titulo2{
-    padding-top: 60px;
-    text-align: center;
-    color: rgb(255, 190, 255);
-}
-#cartelera{
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 15px;
-    justify-content: center;
-}
-.card{
-    height: auto;
-    box-shadow: 4px 4px 4px 4px black;
-    text-align: center;
-    border-radius: 20px;
-    overflow: hidden;
-    border: groove 6px rgb(158, 76, 158);
-    box-sizing: border-box;
-    margin-bottom: 60px;
-    color: white;
-}
-.imgresponsive{
-    height: auto;
-    height: 360px;
-    width: 100%;
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
     display: block;
-    transition: transform 0.3s ease-in-out;
-}
-.imgresponsive:hover{
-    transform: scale(1.3);
-}
-.card h3{
-    padding: 3px;
-}
-.card h4{
-    padding: 3px;
-    font-weight: lighter;
+  }
+  
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
 
-@media only screen and (min-width: 900px) and (max-width: 1200px){
-    #cartelera{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
 }
 
-@media only screen and (min-width: 520px) and (max-width: 900px){
-    .contenedor{
-        margin: 0px;
-    }
-    #cartelera{
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    
+h1 {
+  font-size: 70px;
+  text-align:center;
+  word-break: break-all;
+  font-family: "Orbitron";
 }
-@media screen and (max-width:520px){
-    .contenedor{
-        margin: 0px;
-    }
-    #cartelera{
-        grid-template-columns: 1fr;
-    }
-    
-    
-    
+/* NOSOTROS EQUIPO*/
+.equipo {
+  display: flex;
+  justify-content: space-between; /* o center / space-around */
+  flex-wrap: wrap; /* por si se reduce el ancho de pantalla */
+  gap: 20px;
 }
-@keyframes cambiar{
-    0%{background-image: url(../img/reel1.jpg);}
-    25%{background-image: url(../img/reel2.jpg);}
-    50%{background-image: url(../img/reel3.jpeg);}
-    75%{background-image: url(../img/reel4.jpg);}
-    /*100%{background-image: url(../img/reel5.jpg);}*/
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 250px;
+  padding: 10px;
+ 
 }
 
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+/* CONTACTO*/
 
+.team-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.card .rol {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  margin-top: 15px;
+  background-color: #eee;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.card button:hover {
+  background-color: #ccc;
+}
+
+/* Style the footer */
+footer {
+  background-color: #0e0e1d;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
