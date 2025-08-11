@@ -1,6 +1,7 @@
+
 from django.apps import AppConfig
 
 
-class GamingConfig(AppConfig):
+class NoticiasConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'apps.gaming'
