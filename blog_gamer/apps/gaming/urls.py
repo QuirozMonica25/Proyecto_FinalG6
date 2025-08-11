@@ -1,6 +1,7 @@
 
-from django.urls import path
+from django.urls import path, include
 from . import views
+
 
 app_name = 'gaming'
 urlpatterns = [    
@@ -9,5 +10,6 @@ urlpatterns = [
     path('Detalle/<int:pk>', views.Detalle_Notigaming, name = 'detalle'),
 
     path('Comentario/', views.Comentar_Notigaming, name = 'comentar'),
-    
+
+    path("usuarios/", include('apps.usuarios.urls'))
 ]
