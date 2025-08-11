@@ -9,4 +9,6 @@ env/
 .sqlite3
 .log
 .venv
+.venv/
+.venv
 
