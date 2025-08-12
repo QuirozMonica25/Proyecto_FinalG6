@@ -11,5 +11,5 @@ urlpatterns = [
 
     path('comentario/', views.Comentar_Notigaming, name='comentar'),
 
-    path("usuarios/", include('apps.usuarios.urls'))
+    path("usuarios/", include('apps.usuarios.urls')),
 ]
