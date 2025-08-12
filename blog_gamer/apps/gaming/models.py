@@ -12,7 +12,7 @@ class Categoria(models.Model):
 class Notigaming(models.Model):
     titulo = models.CharField(max_length = 150)
     cuerpo = models.TextField()
-    imagen = models.ImageField(upload_to='noticias')
+    imagen = models.ImageField(upload_to='Notigaming')
     categoria_noticia = models.ForeignKey(Categoria, on_delete = models.CASCADE)
     fecha = models.DateTimeField(auto_now_add = True)
 

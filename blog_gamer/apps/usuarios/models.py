@@ -18,4 +18,4 @@ class Usuario(AbstractUser):
         return self.nombre
     
     def get_absolute_url(self):
-        return reverse('index')
+        return reverse('registrar')

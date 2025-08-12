@@ -6,10 +6,14 @@ from django.shortcuts import render
 
 
 
+def Home(request):
+	return render(request, 't_home.html')
 
-class HomeView(TemplateView):
-    template_name= 'index.html'
+def Nosotros(request):
+    return render(request, 't_nosotros.html')
 
+def Contacto(request):
+    return render(request, 't_contacto.html')
 
 
 

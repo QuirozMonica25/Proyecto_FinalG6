@@ -1,47 +1,69 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block titulo %} INICIO {% endblock titulo %}
+{% block titulo %} NOSOTROS {% endblock titulo %}
 
 {% block contenido %}
+
 <body>
   <header> <!-- Quitar seccion y modificar la clase -->
     <section class="foto-portada">
-      <h1 class="title">BIENVENIDOS</h1>
+      <h1 class="title">¿Quienes somos?</h1>
     </section>
   </header>
-  <br>
-  <br>
-  <article class="integrante"><!-- cambiar la clase --> 
-    <h2>Descubrí el universo gamer chaqueño: desarrolla, jugá, conectate.</h2>
+
+  
+    <h2>¡Hola!</h2>
   </article>
-  <br>
-    <p>
-       Tu espacio para explorar la pasión por los videojuegos y la programación desde el corazón del Chaco. En una industria joven, urbana y global como la de videojuegos en Argentina, 
-       nuestro blog nace con el propósito de despertar el talento local, compartir experiencias, tutoriales y novedades que conecten a jugadores, desarrolladores y curiosos chaqueños.
+    <br>
+    <p>Somos un equipo de tres apasionad@s por los videojuegos y la tecnología: 
+      actualmente estamos formándonos en el Informatorio Chaco, con muchas ganas de dar el salto al mundo IT. 
     </p>
-      <img src="{% static 'img/porcentaje.png'%}" width="500px" alt="1% de desarrollo de videojuegos en chaco">
-    <h3>Inspiración e identidad local:</h3>
-    <p>
-      Conocé historias como Pixel Lab Chaco, un programa provincial que impulsa a todos, incluso sin experiencia, a formarse en desarrollo de videojuegos,
-       incluso sin experiencia, a formarse en desarrollo de videojuegos, con acompañamiento profesional  y financiamiento para hacer realidad tu idea 
-    </p>
-    noticiasdelparana.com.arargencon.org.
-    ###URL comentario
- <!-- Agregar imagen -->
-    <h3>¿Por qué es importante?</h3>
-    <p>
-     En Argentina, los videojuegos emergen como una industria cultural y económica poderosa: joven, conectada globalmente y con fuerte potencial exportador NEA HOY.
+    <p>Aunque venimos de áreas distintas, nos une la curiosidad, la creatividad y una pasión compartida por los videojuegos en todas sus formas: 
+      desde los clásicos que marcaron nuestra infancia hasta las últimas novedades del mundo gamer.
     </p>
     <p>
-      Aquí en el Chaco, programas públicos, redes de creadores y asociaciones como Ew Gaming Club están sembrando las bases para que ese talento local crezca 
-      y brille desde nuestra propia tierra.
+     Este blog nace como un espacio donde combinamos nuestras ganas de aprender, nuestras experiencias como jugadores y 
+     nuestro crecimiento dentro del mundo del desarrollo y la tecnología.
     </p>
-
-</body>
-
+    <p>
+     Queremos compartir análisis, noticias, curiosidades y reflexiones sobre el gaming desde una mirada fresca, inclusiva y en constante evolución.
+    </p>
+    <p>
+    Estamos en camino de convertirnos en profesionales del sector IT, y este proyecto es parte de ese viaje. 
+    </p>
+    <p>
+    Si te gustan los videojuegos tanto como a nosotros, ¡acá tenés un lugar para quedarte!
+    </p>
+  </article>
+  </section>
+<h2>Equipo de trabajo</h2>
+  <div class="equipo">
+   
+    <div class="card">
+      <img src="{% static 'img/avatar_moni.png' %}" alt="Avatar de Mónica" style="width:30%">
+      <div class="container">
+        <h4><b>Mónica</b></h4> 
+        <p>Desarrolladora Web</p> 
+      </div>
+    </div>
+   
+        
+    <div class="card">
+      <img src="{% static 'img/avatarvanesa.png' %}" alt="Avatar de Vanesa" style="width:30%">
+      <div class="container">
+        <h4><b>Vanesa</b></h4> 
+        <p>Diseñadora UX UI</p> 
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/avatarvanesa.png' %}" alt="Avatar de Vanesa" style="width:30%">
+      <div class="container">
+        <h4><b>Vanesa</b></h4> 
+        <p>Diseñadora UX UI</p> 
+      </div>
+    </div>
+  </div>
 {% endblock contenido %}
 
 
-
-<!--<img src="{% static 'img/header.jpg' %}"  alt="foto_fundacion" class="foto"> -->

@@ -8,7 +8,7 @@
 <h1 class="title">noticias</h1>
 <div class="fondo-submenu">
   <div class="navbar">
-    <a href="{% url 'noticias:listar' %}">Noticias</a>
+    <a href="{% url 'notigaming:listar' %}">Noticias</a>
     {% for cat in categorias %}
     <a href="?id={{cat.pk}}">{{cat.nombre}}</a>
     {% endfor %}
@@ -19,10 +19,10 @@
   <section class="principal">
     
     <section class="noticias">
-      {% for noti in noticias %}
+      {% for noti in notigaming %}
       <article class="post">
         <img src="{{noti.imagen.url}}" width="300px" height="auto" class="img-noticia">
-        <p><a href="{% url 'noticias:detalle' noti.pk %}" class="titulos-noticias">{{noti.titulo}}</a></p>
+        <p><a href="{% url 'detalle' noti.pk %}" class="titulos-noticias">{{noti.titulo}}</a></p>
         <!--
           <p>FECHA: {{noti.fecha}}</p>
           <p>CATEGORIA: {{noti.categoria_noticia}}</p>

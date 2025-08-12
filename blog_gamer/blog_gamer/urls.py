@@ -16,11 +16,12 @@ Including another URLconf
 """
 #from operator import index
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.shortcuts import render
-
-from .views import HomeView
-
+from django.conf import settings
+from .import views
+from django.conf.urls.static import static
+from django.contrib.auth import views as auth
 
 
 #def index(request):
@@ -28,5 +29,18 @@ from .views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomeView.as_view(), name= 'index'),
-]
+    
+    path('', views.Home, name='home'),
+    
+    path('nosotros/', views.Nosotros, name='nosotros'),
+    
+   path('notigaming/', include(('apps.gaming.urls', 'notigaming'), namespace='notigaming')),
+
+    path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'), name='login'),
+    
+    path('logout/',auth.LogoutView.as_view(), name="logout"),
+    
+    path('usuarios/', include(('apps.usuarios.urls', 'usuarios'), namespace='usuarios')),
+    
+    path('contacto/', views.Contacto, name='contacto'),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -1,74 +1,64 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-    <title> Blog Gaming | {% block titulo %}{% endblock titulo %}</title>
-    <link rel="shortcut icon" href="{% static 'img/logo2.png' %}"/>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <!-- Fuente UBUNTU -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    
-    <!-- Fuente ROBOTO -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
+{% block titulo %} CONTACTO {% endblock titulo %}
 
-    <!-- Fuente Orbitron-->
- 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+{% block contenido %}
+<body >
     
-</head>
-<body>
- 
-    <div class="hero-image">
-        <img src="{% static 'img/videojuegos neon4.png' %}" alt="ciudad futurista color neon">
-    </div>
+       <h1 class="title">CONTACTO</h1>
+       
+             <section class="about">
+                <h2>Equipo de trabajo</h2>
+                <p>
+                Somos un equipo creativo formado por dos mujeres y un varón, actualmente cursando el Informatorio Chaco. Amantes de los videojuegos y de la tecnología, nos estamos formando para ingresar al mundo IT.
+                </p>
 
-    <!-- MAIN (Center website) -->
-    <div class="main">
+                <div class="team-container">
+                    <div class="card">
+                        <img src="img2.jpg" alt="Integrante 2">
+                        <h3>Nombre 2</h3>
+                        <p class="rol">Desarrolladora Web</p>
+                        <p>Futura desarrolladora con ganas de innovar en el mundo del gaming y la tecnología.</p>
+                        <button>GitHub</button>
+                    </div>
 
-    <!-- Top navigation -->
-    <div class="topnav">
-
-    <!-- Centered link -->
-    <div class="topnav-centered">
-        <a href="{% url 'home' %}" class="active">Inicio</a>
-    </div>
-    
-    <!-- Left-aligned links (default) -->
-    <a href="{% url 'nosotros' %}">Nosotros</a>
-    <a href="{% url 'noticias:listar' %}">Gaming</a>
-    <a href="{% url 'contacto' %}">Contacto</a>
-    
-    <!-- Right-aligned links -->
-    <div class="topnav-right">
-        {% if user.is_authenticated %}
-            <strong class="mensaje">Hola {{user.username}}</strong>
-            <a href="{% url 'logout' %}">Cerrar sesión</a>
-        {% else %}
-            <a href="{% url 'login' %}" id="myBtnLogin">Iniciar sesión</a> <!-- Botón de Login -->
-            <a href="{% url 'usuarios:registro' %}" id="myBtnRegister">Registrar</a> <!-- Botón de Registro -->
-        {% endif %}
-        </div>
-    
-    </div>
-   
-    <h1>BLOGAMING</h1>
-    <hr>
-    {% block contenido %}    {% endblock contenido %}
-</body> 
-<footer>
-    Página creada en Python|Django y modificada por COM.5A/G6 del INFORMATORIO
-</footer>
-</html>
+                    <div class="card">
+                        <img src="img3.jpg" alt="Integrante 3">
+                        <h3>Nombre 3</h3>
+                        <p class="rol">Tester QA</p>
+                        <p>Curioso, detallista y gamer de corazón. Apuntando a un rol técnico en IT.</p>
+                        <button>GitHub</button>
+                    </div>
+                    <div class="card">
+                        <img src="img1.jpg" alt="Integrante 1">
+                        <h3>Nombre 1</h3>
+                        <p class="rol">Diseñadora UX/UI</p>
+                        <p>Apasionada por el diseño y los videojuegos. Siempre lista para un nuevo reto creativo.</p>
+                        <button>Linkedin</button>
+                    </div>
+                </div>
+            </section>
+            <p class="contacto-texto2">¿Querés comunicarte con nosotros?</p>
+        <section>
+            <div class="redes">
+                <div class="instagram">
+                    <img src="{% static 'img/redes2.png'%}" width="30px" alt="Instagram">
+                    <a href="https://www.instagram.com/fundacion__amigos/" target="_blank">INSTAGRAM</a>
+                </div>
+                <div class="facebook">
+                    <img src="{% static 'img/redes1.png'%}" width="30px" alt="Facebook">
+                    <a href="https://www.facebook.com/EscultoresenelImpenetrable" target="_blank">FACEBOOK</a>
+                </div>
+                <div class="correo">
+                    <img src="{% static 'img/redes3.png'%}" width="30px" alt="Correo">
+                    <a href="mailto:info@amigosdelarteyturismo.org" target="_blank">CORREO</a>
+                </div>
+                <div>
+                    <img src="{% static 'img/redes5.png'%}" width="30px" alt="Ubicacion">
+                    <a href="https://goo.gl/maps/16yEVpXTGKqMwufC8" target="_blank">UBICACION</a>
+                </div>                
+            </div>
+         </section>
+</body>
+{% endblock contenido %}

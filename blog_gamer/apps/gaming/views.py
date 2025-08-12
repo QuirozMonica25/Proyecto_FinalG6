@@ -28,7 +28,7 @@ def Detalle_Notigaming(request,pk):
     n = Notigaming.objects.get(pk = pk) #RETORNA SOLO UN OBJETO
     contexto['noticia'] = n
 
-    c = Comentario.objects.filter(noticia= n)
+    c = Comentario.objects.filter(noticia= n).select_related('usuario')
 
     contexto['comentarios'] = c
     
@@ -43,6 +43,7 @@ def Comentar_Notigaming(request):
     noticia = Notigaming.objects.get(pk=game)#busco la noticia con esa pk
     coment = Comentario.objects.create(usuario=usu, noticia= noticia, texto=com)
 
-    return redirect(reverse_lazy('gaming:detalle', kwargs={'pk':game}))
+    return redirect('detalle', pk=game)
+    # return redirect(reverse_lazy('gaming:detalle', kwargs={'pk':game}))
 
 

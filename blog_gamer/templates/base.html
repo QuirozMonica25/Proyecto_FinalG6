@@ -8,7 +8,7 @@
       
     <title> Blog Gaming | {% block titulo %}{% endblock titulo %}</title>
     <link rel="shortcut icon" href="{% static 'img/logo2.png' %}"/>
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     
     <!-- Fuente UBUNTU -->
@@ -48,7 +48,7 @@
     
     <!-- Left-aligned links (default) -->
     <a href="{% url 'nosotros' %}">Nosotros</a>
-    <a href="{% url 'noticias:listar' %}">Gaming</a>
+    <a href="{% url 'notigaming:listar' %}">Gaming</a>
     <a href="{% url 'contacto' %}">Contacto</a>
     
     <!-- Right-aligned links -->
@@ -57,8 +57,10 @@
             <strong class="mensaje">Hola {{user.username}}</strong>
             <a href="{% url 'logout' %}">Cerrar sesión</a>
         {% else %}
-            <a href="{% url 'login' %}" id="myBtnLogin">Iniciar sesión</a> <!-- Botón de Login -->
-            <a href="{% url 'usuarios:registro' %}" id="myBtnRegister">Registrar</a> <!-- Botón de Registro -->
+             <!-- <a href="{% url 'login' %}" id="myBtnLogin">Iniciar sesión</a> <!-- Botón de Login -->
+            <a href="{% url 'usuarios:iniciar_sesion' %}" id="myBtnLogin">Iniciar sesión</a> <!-- Botón de Login -->
+            <a href="{% url 'usuarios:registrar' %}" id="myBtnRegister">Registrar</a> <!-- Botón de Registro -->
+            
         {% endif %}
         </div>
     

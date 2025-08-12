@@ -15,7 +15,7 @@ class RegistroUsuario(CreateView):
     model = Usuario
     form_class = RegistroUsuarioForm
     template_name = 'usuarios/registrar.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('listar_usuarios')
 
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
@@ -29,7 +29,7 @@ class ActualizarUsuario(LoginRequiredMixin, UpdateView):
     model = Usuario
     fields = ['nombre', 'apellido', 'email', 'fecha_nacimiento', 'imagen']
     template_name = 'usuarios/registrar.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('/usuarios/')
 
     def dispatch(self, request, *args, **kwargs):
         user_id = self.kwargs.get('pk')
