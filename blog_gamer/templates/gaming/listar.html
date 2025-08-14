@@ -22,7 +22,7 @@
       {% for noti in notigaming %}
       <article class="post">
         <img src="{{noti.imagen.url}}" width="300px" height="auto" class="img-noticia">
-        <p><a href="{% url 'detalle' noti.pk %}" class="titulos-noticias">{{noti.titulo}}</a></p>
+        <p><a href="{% url 'notigaming:detalle' noti.pk %}" class="titulos-noticias">{{noti.titulo}}</a></p>
         <!--
           <p>FECHA: {{noti.fecha}}</p>
           <p>CATEGORIA: {{noti.categoria_noticia}}</p>

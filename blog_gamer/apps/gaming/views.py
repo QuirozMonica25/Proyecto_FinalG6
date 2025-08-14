@@ -15,7 +15,7 @@ def Listar_Notigaming(request):
     else:
         n = Notigaming.objects.all().order_by('-fecha')
 
-    contexto['noticias'] = n
+    contexto['notigaming'] = n
 
     cat = Categoria.objects.all().order_by('nombre')
     contexto['categorias'] = cat
@@ -43,7 +43,7 @@ def Comentar_Notigaming(request):
     noticia = Notigaming.objects.get(pk=game)#busco la noticia con esa pk
     coment = Comentario.objects.create(usuario=usu, noticia= noticia, texto=com)
 
-    return redirect('detalle', pk=game)
+    return redirect('notigaming:detalle', pk=game)
     # return redirect(reverse_lazy('gaming:detalle', kwargs={'pk':game}))
 
 
