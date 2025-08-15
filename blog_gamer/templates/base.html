@@ -50,6 +50,22 @@
     <a href="{% url 'nosotros' %}">Nosotros</a>
     <a href="{% url 'notigaming:listar' %}">Gaming</a>
     <a href="{% url 'contacto' %}">Contacto</a>
+
+
+
+    <!-- Right-aligned links -->
+    <!--<div class="topnav-right">
+    {% if user.is_authenticated %}
+        <strong class="mensaje">Hola {{ user.username }}</strong>
+        <form method="post" action="{% url 'apps.usuarios:cerrar_sesion' %}">
+        {% csrf_token %}
+        <button type="submit" class="dropdown-item">Cerrar Sesión</button>
+        </form>
+    {% else %}
+        <a href="{% url 'apps.usuarios:registrar' %}" id="myBtnRegister">Register</a>--> <!-- Botón de Registro -->
+        <!--<a href="{% url 'apps.usuarios:iniciar_sesion' %}" id="myBtnLogin">Iniciar sesión</a>--> <!-- Botón de Login -->
+    <!--{% endif %}
+    </div>-->
     
     <!-- Right-aligned links -->
     <div class="topnav-right">
@@ -57,9 +73,9 @@
             <strong class="mensaje">Hola {{user.username}}</strong>
             <a href="{% url 'logout' %}">Cerrar sesión</a>
         {% else %}
-             <!-- <a href="{% url 'login' %}" id="myBtnLogin">Iniciar sesión</a> <!-- Botón de Login -->
-            <a href="{% url 'usuarios:iniciar_sesion' %}" id="myBtnLogin">Iniciar sesión</a> <!-- Botón de Login -->
-            <a href="{% url 'usuarios:registrar' %}" id="myBtnRegister">Registrar</a> <!-- Botón de Registro -->
+              <a href="{% url 'login' %}" id="myBtnLogin">Iniciar sesión</a>  <!--Botón de Login -->
+              <!--<a href="{% url 'usuarios:iniciar_sesion' %}" id="myBtnLogin">Iniciar sesión</a>-->  <!--Botón de Login -->
+              <a href="{% url 'apps.usuarios:registrar' %}" id="myBtnRegister">Registrar</a>  <!--Botón de Registro -->
             
         {% endif %}
         </div>

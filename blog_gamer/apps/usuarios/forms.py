@@ -9,9 +9,10 @@ class RegistroUsuarioForm(UserCreationForm):
         fields = ['username', 'password1', 'password2', 'nombre', 'apellido', 'email', 'fecha_nacimiento', 'imagen']
 
     @transaction.atomic
-    def save(self):
+    def save(self, commit=True):
         user = super().save(commit=False)
         user.is_superuser = False
         user.is_staff = False
-        user.save()
+        if commit:
+            user.save()
         return user
