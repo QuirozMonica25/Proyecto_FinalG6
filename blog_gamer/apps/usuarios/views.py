@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from .models import Usuario
-from django.views.generic import CreateView, UpdateView #DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from .forms import RegistroUsuarioForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
@@ -15,7 +15,7 @@ class RegistroUsuario(CreateView):
     model = Usuario
     form_class = RegistroUsuarioForm
     template_name = 'usuarios/registrar.html'
-    success_url = reverse_lazy('apps.usuarios:listar_usuarios')
+    success_url = reverse_lazy('apps.usuarios:iniciar_sesion') #redirige al login
 
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
@@ -34,7 +34,7 @@ class ActualizarUsuario(LoginRequiredMixin, UpdateView):
     def dispatch(self, request, *args, **kwargs):
         user_id = self.kwargs.get('pk')
         if str(user_id) != str(request.user.pk):
-            raise Http404("No tienes permiso para actualizar este usuario")
+            return Http404("No tienes permiso para actualizar este usuario")
         return super().dispatch(request, *args, **kwargs)
     
     def form_valid(self, form):

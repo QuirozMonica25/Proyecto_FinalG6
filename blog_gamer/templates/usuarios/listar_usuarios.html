@@ -1,27 +1,44 @@
+
 {% extends 'base.html' %}
 {% load static %}
-
-{% block titulo %} REGISTRO {% endblock titulo %}
-
+{% block titulo %}
+<title>Listar usuarios</title>
+{% endblock %}
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
 {% block contenido %}
-<body>
-  <section class="registro">
-
-    <main role="main">
-      <div class="container">
-        <div class="row mt-3">
-          <div class="col-md-9 mx-auto mb-5">
-            <form action="" method="post">{% csrf_token %}         
-              <h3 class="title">Registro</h3>
-              {{form.as_p}}
-              <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
-            </form>
-          </div>
+<section data-bs-version="5.1" class="team2 cid-tffTM7TT6b">
+    <h2 style="text-align:center; margin-top: 8%;"><strong>Usuarios:</strong></h2>
+    <div class="container">
+        {% for item in usuarios %}
+        <a class="btn btn-primary" style="width: 100%;"
+            href="#">Eliminar usuario:{{item.username}}</a>
+        <div class="card">
+            <div class="card-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="image-wrapper">
+                            <img src="{{ item.imagen.url }}" class="d-block w-50">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md">
+                        <div class="card-box">
+                            <h6>
+                                <strong>Nombre: {{ item.nombre }}</strong>
+                            </h6>
+                            <h6>
+                                <strong>Apellido: {{ item.apellido }}</strong>
+                            </h6>
+                            <p>
+                                <i>Email: {{ item.email }}</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </main>
-  </section>  
-</body>
+        {% endfor %}
+</section>
 <br>
-<br>
-{% endblock contenido %}
+{% endblock %}

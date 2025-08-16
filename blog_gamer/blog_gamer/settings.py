@@ -21,7 +21,7 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 
 LOGIN_URL = reverse_lazy('apps.usuarios:iniciar_sesion')
 LOGIN_REDIRECT_URL = reverse_lazy('home')
-LOGOUT_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_REDIRECT_URL = reverse_lazy('apps.usuarios:iniciar_sesion')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
