@@ -1,14 +1,27 @@
 
-__pycache__
-.venv
-.venv/
-env/
-.env
-.vscode
+
+__pycache__/
 *.pd[cod]
 .sqlite3
 .log
+# -----
+# Ignoramos toda la carpeta media
+/media/*
+# Salvamos la carpeta libros
+!/media/gaming/ 
+# Ignoramos nuevamente todo lo que hay dentro
+/media/gaming/*
+# Y salvamos el archivo default
+#!/media/libros/libro_default.jpg
+# Mismo patrón para usuarios default
+!/media/usuarios/
+/media/usuarios/*
+!/media/usuarios/usuario_default.png
+# -----
+.env
+.vscode/
+venv/
+env/
 .venv
 .venv/
-.venv
 
